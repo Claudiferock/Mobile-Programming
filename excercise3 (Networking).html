@@ -1,0 +1,58 @@
+<!-- Fetch astronomy picture of the day from NASA API -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather in Helsinki</title>
+  </head>
+  <body>
+    <!-- Root container for react components -->
+    <div id='root'></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    
+    <script type="text/babel">
+      class Weather extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: '',
+            temperature: '', 
+            weather: '', 
+            image: ''
+          };
+        }
+        componentDidMount() {
+          fetch('https://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=5ff1f1e9eb2d0a2bd5de99a805904392')
+          .then((response) => response.json()) 
+          .then((response) => { 
+             console.log(response);
+              this.setState({ 
+                name: response.name,
+                temperature: response.main.temp,
+                weather: response.weather[0].main,
+                image:"http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
+              })
+          });
+        }
+        
+        render() { 
+          return (
+            <div>
+              <div><h1>{this.state.name}</h1></div>
+              <div>Temperature: {this.state.temperature}</div>
+              <div>Weather: {this.state.weather}</div>
+              <div>
+                <img src={this.state.image} />
+              </div>
+            </div>
+          );
+        }
+      }
+      
+      ReactDOM.render(<Weather />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
