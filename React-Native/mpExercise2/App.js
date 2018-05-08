@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, Alert, Button, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, Button } from 'react-native';
 
 
 
@@ -10,59 +10,60 @@ export default class App extends React.Component {
     this.state = {
       randomNum: 0,
       guessNum: 0,
-      counter: 0,
+      counter: 1,
+      outputText: 'Gues a number between 1-100',
     };
   }
-
-  makeRandom = () => {
-      let randomNumber = Math.floor(Math.random() * 100) + 1;
-      this.setState(() => {
-      return {randomNum: parseInt(randomNumber)}
-      });
+  
+  componentDidMount() {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    this.setState({
+       randomNum: randomNumber,
+    })
   }
 
   buttonGuess = () => {
-    let guesssed = parseInt(this.state.guessNum);
-    const numRandom = this.state.randomNum;
-    let tryNum = this.state.counter;
-    for (tryNum = 0; guesssed === numRandom; tryNum++) {
-      if (guesssed < numRandom) {
-        Alert.alert("Your guessNum " + guesssed + " is too low. Try again!");
-      }
-      else if (guesssed > numRandom) {
-        Alert.alert("Your guessNum " + guesssed + " is too high. Try again!");
-      }
-      else if (guesssed < 1 && guesssed > 100) {
-        Alert.alert("Your number is out of range. Try again!");
-      }
-      else {
-        Alert.alert(guesssed + " is not a number. Try again!");
-      }
-      Alert.alert("You guesssed the number in " + tryNum + "tries");
-    }
-  }
-// SHIT AIN'T WORKING YET
-
-
-  ComponentDidMount() {
-    Alert.alert("test")
-    {this.makeRandom()}
-    Alert.alert("worked")
+    const currentGuess = parseInt(this.state.guessNum);
+    const targetNumber = parseInt(this.state.randomNum);
+     if (currentGuess < targetNumber) {
+       this.setState({
+        counter: this.state.counter + 1,
+        outputText: 'Your guess ' + currentGuess + ' is too low. Please try again!',
+       })
+     }
+     else if (currentGuess > targetNumber) {
+      this.setState({
+        counter: this.state.counter + 1,
+        outputText: 'Your guess ' + currentGuess + ' is too high. Please try again!',
+       })
+     }
+     else {
+      this.setState({
+        counter: this.state.counter + 1,
+        outputText: 'You are correct!!!',
+       })
+       Alert.alert("You guesssed the number " + this.state.randomNum + " in " + this.state.counter + " tries");
+     }
   }
 
   render() {
     return (
       <View style={styles.container}>
         <View>
-          <Text>Gues a number between 1-100 ({this.state.randomNum})</Text>
-          <TextInput
-          style={styles.inputs}
-          onChangeText={(guessNum) => this.setState({guessNum})}
-          value={this.state.guessNum}
-        />
+          <Text>{this.state.outputText}</Text>
         </View>
-        <View style= {styles.buttonStyle} >
-        <Button title="Make a guessNum" onPress={this.buttonGuess} />
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.inputs}
+            onChangeText={(guessNum) => this.setState({guessNum})}
+            keyboardType = 'numeric'
+            value={this.state.guessNum}
+          />
+          <Button 
+            title="Make a guess" 
+            onPress={this.buttonGuess}
+            style= {styles.buttonStyle}
+          />
         </View>
       </View>
     );
@@ -72,20 +73,24 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 30,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  buttonStyle: {
+  inputContainer: {
+    width: '100%',
     flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    justifyContent:'space-between',
-    width: 70,
+  },
+  buttonStyle: {
+    width: '50%',
   },
   inputs: {
-    margin: 5,
-    width: 200,
-    borderColor: 'coral',
-    borderWidth: 1,
+    width: '50%',
+    borderColor: 'lightgrey',
+    borderWidth: 1.5,
+    alignItems: 'center',
   }
 });
