@@ -9,25 +9,32 @@ export default class App extends React.Component {
       firstNumber: 0,
       secondNumber: 0,
       result: 0,
-      outputText: 'test',
+      outputText: 'Try an addition or a substraction!',
       history: [],
     };
+  }
+
+  componentDidMount() {
+    const historyTitle = 'History';
+    this.setState({
+      history: [... this.state.history, {key: historyTitle}, historyTitle]
+    });
   }
 
   buttonPlus = () => {
     const sum = parseInt(this.state.firstNumber) + parseInt(this.state.secondNumber);
     const currentOutput = this.state.firstNumber + ' + ' + this.state.secondNumber + ' = ' + sum;
     this.setState({
-      outputText: currentOutput,
+      outputText: 'Result: ' + sum,
       history: [... this.state.history, {key: currentOutput}, currentOutput]
     });
   }
 
   buttonMinus = () => {
-    const sum = parseInt(this.state.firstNumber) - parseInt(this.state.secondNumber);
-    const currentOutput = this.state.firstNumber + ' - ' + this.state.secondNumber + ' = ' + sum;
+    const substraction = parseInt(this.state.firstNumber) - parseInt(this.state.secondNumber);
+    const currentOutput = this.state.firstNumber + ' - ' + this.state.secondNumber + ' = ' + substraction;
     this.setState({
-      outputText: currentOutput,
+      outputText: 'Result: ' + substraction,
       history: [... this.state.history, {key: currentOutput}, currentOutput]
     });
   }
