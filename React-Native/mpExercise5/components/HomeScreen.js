@@ -65,13 +65,6 @@ export default class HomeScreen extends React.Component {
           <Button style={styles.button} title=" History " 
             onPress={ () => navigate('History', { history: this.state.history })} />
         </View>
-        <View style={styles.list}>
-          <FlatList
-            data={this.state.history}
-            renderItem={({item}) =>
-              <Text>{item.key}</Text>}
-          />
-        </View>
       </View>
     );
   }
