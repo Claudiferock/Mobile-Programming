@@ -1,4 +1,4 @@
 React Native exercises
 
-Exercise 1: Calculator (ready)
-Exercise 2: Number guessing game (started)
+Exercise 1: Calculator
+Exercise 2: Number guessing game

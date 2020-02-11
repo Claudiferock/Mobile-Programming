@@ -1,0 +1,162 @@
+<!-- Fetch Trivias from Open Trivia DB -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>React Trivia</title>
+
+    <style>
+      body {
+        font-family: 'Open Sans Condensed', sans-serif;
+      }
+			.container {
+        display: flex;
+				flex-direction: row;
+        height: 80vh;
+				margin: 5vh 0 2rem;
+			}
+      .cards {				
+				width: 60vw;
+				height: 80vh;
+        margin: 0 4em;
+				display: flex;
+				flex-direction: column;
+        justify-content: center;
+			}
+      .instructions {
+				display: flex;
+				width: 50vw;
+				height: 80vh;
+        margin-top: 30px;
+        font-size: 2em;
+				color: hsl(170, 85%, 25%);
+				flex-direction: column;
+				justify-content: start;
+				align-items: flex-start;
+			}
+      h1 {
+        font-size: 5em;
+        text-align: center;
+        color: rgb(20, 80, 91);
+        margin-top: 5vh;
+      }
+      h2 {
+        font-size: 2em;
+      }
+      [class^="card__"] {
+        height: 16rem;
+        width: 36rem;
+        padding: 2rem 1rem;
+        text-align: center;
+        border: .5px solid rgba(128, 128, 128, .7);
+        border-radius: 10px;
+        box-shadow: 0 1.5rem 3rem rgba(68, 61, 61, .9);
+        color: aliceblue;
+      }
+      .card__question {
+        background: linear-gradient(to right, hsl(353, 85%, 53%), hsl(6, 66%, 35%));
+        margin-left: 2em;
+      }
+      .card__answer {
+        margin-top: 30px;
+        background: linear-gradient(to right, rgb(22, 157, 135), rgb(20, 80, 91));
+        filter: blur(2rem);
+        font-size: 1.5em;
+        transition: all 300ms;
+        transition-timing-function: ease-in;
+      }
+
+      .card__answer:hover {
+        filter: blur(0rem);
+        border: 3px solid rgba(6, 224, 188, 0.8);
+        height: 22rem;
+        transform: scale(1.05) translate(35%, -25%);
+        box-shadow: -2rem 2rem 3rem .5rem rgba(68, 61, 61, .9);
+        transition-timing-function: ease-out;
+        transition: all 300ms;
+        font-size: 2.5em;
+      }
+      button {
+        width: 10rem;
+        height: 3rem;
+        border-radius: 5px;
+        border: none;
+        text-transform: uppercase;
+        background: linear-gradient(to right, rgb(22, 157, 135), rgb(20, 80, 91));
+        color: aliceblue;
+        transition: all 150ms;
+      }
+      button:hover {
+        transition: all 150ms;
+        border: 1.6px solid hsl(353, 85%, 53%);
+        box-shadow: 0 1.5rem 2rem rgba(68, 61, 61, .4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Root container for react components -->
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+      function Trivia() {
+        const [category, setCategory] = React.useState('');
+        const [question, setQuestion] = React.useState('');
+        const [correctAns, setCorrectAns] = React.useState('');
+        const [isReady, setReady] = React.useState(false);
+        
+        React.useEffect(() => {
+          fetchData();
+        }, [])
+
+        const fetchData = () => {
+          fetch('https://opentdb.com/api.php?amount=1')
+          .then(response => response.json()) 
+          .then(responseData => {
+            const data =  responseData.results[0];
+            console.log(data);
+            setCategory(data.category);
+            setQuestion(data.question);
+            setCorrectAns(data.correct_answer);
+            setReady(true);
+          })
+          .catch(err => console.error(err));
+        }
+
+        if (!isReady) {
+          return <p>Loading...</p>
+        }
+
+        return (
+          <div>
+            <h1>Trivias!</h1>
+            
+            <div className="container">
+              <div className="cards">
+                <section className="card__question">
+                  <h2>{question}</h2>
+                  <p>{category}</p>
+                </section>
+
+                <section className="card__answer">
+                  <h2>{correctAns}</h2>
+                </section>
+              </div>
+
+              <div className="instructions">
+                <h3>Hover on the green area to get the answer!</h3>
+                <button onClick={() => fetchData()}>New Question</button>
+              </div>
+            </div>
+            
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Trivia />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
