@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title} >{"\n"}{"\n"}+ - Calculator</Text>
+      <Text style={styles.title} >{"\n"}{"\n"}Calculator</Text>
       <View style={styles.action}>
         <View>
           <TextInput
@@ -32,8 +32,8 @@ export default function App() {
             />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title="+" onPress={() => buttonPressed('+')}/>
-          <Button title="-" onPress={() => buttonPressed('-')}/>
+          <Button color="tomato" title="+" onPress={() => buttonPressed('+')}/>
+          <Button color="tomato" title="-" onPress={() => buttonPressed('-')}/>
         </View>
       </View>
       <Text style={styles.result} >{result}</Text>
@@ -46,13 +46,15 @@ const styles = StyleSheet.create({
     height: 100,
     flex: 1,
     flexDirection: "column",
-    backgroundColor: '#fff',
+    backgroundColor: '#24292e',
+    color: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
     flex: 1,
     fontSize: 36,
+    color: 'white',
   },
   action: {
     backgroundColor: 'transparent',
@@ -66,13 +68,14 @@ const styles = StyleSheet.create({
     fontSize: 84,
   },
   inputText: {
+    color: 'white',
     fontSize: 84,
     width: 140,
     marginHorizontal: 10,
     marginVertical: 2,
     paddingRight: 8,
-    backgroundColor: 'rgba(36, 41, 46, 0.1)',
-    borderColor: 'gray',
+    backgroundColor: '#202325',
+    borderColor: 'coral',
     borderRadius: 2,
     borderWidth: 1,
     textAlign: "right",
@@ -81,10 +84,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     width: 40,
-    height: 100,
-    backgroundColor: 'white',
+    height: 80,
   },
   result: {
+    color: 'white',
     flex: 2,
     fontSize: 84,
     textDecorationLine: "underline",
