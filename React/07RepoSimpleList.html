@@ -7,40 +7,58 @@
     <style>
         :root {
             --main-blue-color:#37474F;
+            font: "Fira Sans", sans-serif;
         }
         body {
           display: flex;
+          margin: 0;
           font-size: 2rem;
-          justify-content: center;
+          color: var(--main-blue-color);
         }
         .title {
-            font: 2em "Fira Sans", sans-serif;
-            color: var(--main-blue-color);
-            text-align: center;
+          color: var(--main-blue-color);
+          padding-top: .5em;
+          text-align: center;
+        }
+        table {
+          border-collapse: collapse;
         }
         td,th {
-            width: 500px;
+          width: 500px;
         }
         th {
-            margin: 0rem;
-            color: whitesmoke;
-            background-color: var(--main-blue-color);
-            position: sticky;
-            top: 20px;
+          margin: 0rem;
+          color: whitesmoke;
+          background-color: rgba(36, 41, 46, 0.9);
+          position: sticky;
+          top: 0px;
         }
         th:first-child {
-            background-color: transparent;
+            /* background-color: rgba(255, 255, 255, 0.8); */
             width: 50px;
         }
+        th:last-child {
+            border-radius: 0 0 5px 0;
+        }
+        tr:hover {
+          background-color: rgba(36, 41, 46, 0.08);
+        }
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline; 
+        }
         .avatar {
-          width: 2.4em;
+          width: 1.4em;
+          padding: .1em .4em 0 .8em;
 
         }
         img {
-            border: .05rem solid#AAFF00;
-            border-radius: 100px;
+            border: 2px solid rgba(71, 67, 54, 0.8);
+            border-radius: 50% 6% / 48% 40%;
             box-shadow: .1em .15em .2rem .1rem rgba(0, 0, 0, 0.5);
-            height: 2em;
+            height: 1.4em;
         }
     </style>
   </head>
