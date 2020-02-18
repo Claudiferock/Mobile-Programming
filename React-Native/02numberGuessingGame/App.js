@@ -10,11 +10,9 @@ export default function App() {
 
   const buttonPressed = (urGuess) => {
     (parseInt(urGuess) < randomNum) ? (
-      console.log(randomNum),
       setCount(count+1),
       setMessage(`Your guess ${inputNum} is too low. Please try again!`))
     : (parseInt(urGuess) > randomNum) ? (
-      console.log(randomNum),
       setCount(count+1),
       setMessage(`Your guess ${inputNum} is too high. Please try again!`))
     : (parseInt(urGuess) == randomNum) ? setMessage(`You guesssed the number "${inputNum}" in ${count} tries!`)
