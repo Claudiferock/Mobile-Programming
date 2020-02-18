@@ -8,14 +8,16 @@ export default function App() {
   const [result, setResult] = useState(0);
 
   const buttonPressed = (operator) => {
-    (operator == '+')
-      ? setResult(parseInt(inputNum1) + parseInt(inputNum2))
-      : setResult(parseInt(inputNum1) - parseInt(inputNum2));
+    (operator == '+') ? setResult(parseInt(inputNum1) + parseInt(inputNum2))
+    : (operator == '-') ? setResult(parseInt(inputNum1) - parseInt(inputNum2))
+    : (operator == '*') ? setResult(parseInt(inputNum1) * parseInt(inputNum2))
+    : setResult(parseInt(inputNum1) / parseInt(inputNum2));
+
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title} >{"\n"}{"\n"}Calculator</Text>
+      <Text style={styles.result} >{result}</Text>
       <View style={styles.action}>
         <View>
           <TextInput
@@ -32,29 +34,41 @@ export default function App() {
             />
         </View>
         <View style={styles.buttonContainer}>
-          <Button color="tomato" title="+" onPress={() => buttonPressed('+')}/>
-          <Button color="tomato" title="-" onPress={() => buttonPressed('-')}/>
+          <Button color="tomato" title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
+          <Button color="tomato" title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button color="tomato" title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
+          <Button color="tomato" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
         </View>
       </View>
-      <Text style={styles.result} >{result}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 100,
     flex: 1,
     flexDirection: "column",
+    justifyContent: 'center',
+    alignItems: 'stretch',
     backgroundColor: '#24292e',
     color: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  title: {
-    flex: 1,
-    fontSize: 36,
+  result: {
     color: 'white',
+    flex: 1,
+    textAlign: "center",
+    textAlignVertical: "center",
+    backgroundColor: 'white',
+    fontSize: 98,
+    textShadowColor: 'tomato',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
+    borderColor: 'tomato',
+    borderWidth: 1,
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
   },
   action: {
     backgroundColor: 'transparent',
@@ -62,35 +76,30 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 60,
   },
   inputContainer: {
     flexDirection: 'row',
     fontSize: 84,
   },
   inputText: {
-    color: 'white',
+    color: 'gainsboro',
     fontSize: 84,
     width: 140,
     marginHorizontal: 10,
-    marginVertical: 2,
+    marginVertical: 8,
     paddingRight: 8,
     backgroundColor: '#202325',
     borderColor: 'coral',
-    borderRadius: 2,
+    borderRadius: 5,
     borderWidth: 1,
     textAlign: "right",
   },
   buttonContainer: {
     flexDirection: 'column',
     justifyContent: 'space-around',
+    marginHorizontal: 8,
     width: 40,
-    height: 80,
+    height: 100,
   },
-  result: {
-    color: 'white',
-    flex: 2,
-    fontSize: 84,
-    textDecorationLine: "underline",
-  },
-
 });
