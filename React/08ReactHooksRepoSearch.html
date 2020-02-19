@@ -2,15 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>GitHub Repository Serarch</title>
-
+    <title> GitHub Repository Serarch </title><link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
     <style>
         :root {
             --main-blue-color:#24292e;
-            font: "Fira Sans", sans-serif;
         }
         body {
+          font-family: 'Lato', sans-serif;
           display: flex;
+          background: linear-gradient(217deg, rgba(255,0,0,.3), rgba(255,0,0,0) 60.71%),
+            linear-gradient(127deg, rgba(0,255,0,.1), rgba(179, 255, 0, 0) 20.71%),
+            linear-gradient(316deg, rgba(0,0,255,.6), rgba(0,0,255,0) 70.71%);
           margin: 0;
           font-size: 2rem;
           color: var(--main-blue-color);
@@ -22,6 +24,7 @@
           align-items: center;
           align-content: center;
           position: fixed;
+          padding: 2px 0 3px 0;
           top: 0px;
           background: var(--main-blue-color);
           width: 100vw;
@@ -30,6 +33,7 @@
         .octicon {
           background-color: var(--main-blue-color);
           width: 50px;
+          margin-left: 1%;
           fill: whitesmoke;
         }
         form {
@@ -62,12 +66,12 @@
           border-color: rgba(27, 31, 35, 0.5);
         } */
         .title {
-            color: var(--main-blue-color);
+            text-transform: uppercase;
             padding-top: .5em;
             text-align: center;
         }
         td,th {
-            width: 500px;           
+            width: 600px;           
         }
         table {
           border-collapse: collapse;
@@ -77,11 +81,20 @@
             color: whitesmoke;
             background-color: rgba(36, 41, 46, 0.9);
             position: sticky;
-            top: 50px;
+            top: 55px;
         }
         th:first-child {
             /* background-color: rgba(255, 255, 255, 0.8); */
             width: 50px;
+        }
+        td:first-child {
+          background-image: repeating-linear-gradient(180deg, 
+            rgba(47, 36, 255, 0.8) 1px 3px,
+            transparent 4px 5px);
+            border-radius: 0 10% 10% 0;
+        }
+        td {
+          text-indent: 2%;
         }
         th:last-child {
             border-radius: 0 0 5px 0;
@@ -90,18 +103,20 @@
           background-color: rgba(36, 41, 46, 0.08);
         }
         a {
+          color: rgba(47, 36, 255, 0.8);
           text-decoration: none;
         }
         a:hover {
+          color: rgb(47, 36, 255);
           text-decoration: underline; 
         }
         .avatar {
           width: 1.4em;
-          padding: .1em .4em 0 .8em;
+          padding: .1em .4em 0 .3em;
         }
         img {
-            border: 2px solid rgba(71, 67, 54, 0.8);
-            border-radius: 50% 6% / 48% 40%;
+            border: 2px solid rgb(45, 98, 81);
+            border-radius: 50%;
             box-shadow: .1em .15em .2rem .1rem rgba(0, 0, 0, 0.5);
             height: 1.4em;
         }

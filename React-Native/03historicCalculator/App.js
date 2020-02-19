@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 35,
   },
   action: {
-    backgroundColor: 'transparent',
     flex: 2.4,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -116,9 +115,10 @@ const styles = StyleSheet.create({
   },
   history: {
     flex: 1.4,
+    alignItems: 'center',
   },
   historyText: {
-    textAlign: "center",
+    textAlign: "left",
     color:'gainsboro',
     fontSize: 24,
   }
