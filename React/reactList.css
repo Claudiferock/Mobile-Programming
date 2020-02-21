@@ -1,0 +1,33 @@
+:root {
+  --main-blue-color:#37474F;
+}
+body {
+font-size: 2rem;
+}
+h2 {
+  font: 2em "Fira Sans", sans-serif;
+  color: var(--main-blue-color);
+  text-align: center;
+}
+td,th {
+  width: 200px;
+}
+th {
+  margin: 2rem;
+  color: whitesmoke;
+  background-color: var(--main-blue-color);
+}
+th:first-child {
+  background-color: transparent;
+  width: 50px;
+}
+.avatar {
+text-align: right;
+padding: 0 30px;
+}
+img {
+  border: .05rem solid#AAFF00;
+  border-radius: 100px;
+  box-shadow: .1em .15em .2rem .1rem rgba(0, 0, 0, 0.5);
+  height: 3em;
+}

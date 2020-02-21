@@ -4,44 +4,8 @@
     <meta charset="utf-8">
     <title>Mobile Programming: React basics exercise2</title>
 
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 10rem;
-        background: radial-gradient(circle, rgb(22, 157, 135), rgb(0, 104, 87));
-        font-family: 'Open Sans Condensed', sans-serif;
-        color: whitesmoke;
-      }
-      button {
-        color: whitesmoke;
-        margin:1rem .2rem;
-        height: 40px;
-        width: 50px;
-        border-radius: 10px;
-        border: .15em solid rgb(248, 169, 35);
-        background: transparent;
-        
-      }
-      button:hover {
-        background: rgb(248, 169, 35);
-        transition-property: background;
-        transition-duration: 300ms;
-      }
-      button:active {
-        font-weight: bold;
-      }
-      .btn--reset {
-        height: 40px;
-        width: 80px;
-        border-color: rgb(238, 33, 57);
-      }
-      .btn--reset:hover {
-        background: rgb(238, 33, 57);
-      }
-    </style>
+    <link rel="stylesheet" href="reactCounter.css"/>
+
   </head>
   <body>
     <!-- Root container for react components -->
@@ -80,8 +44,8 @@
         render() { 
           return (
             <div>
-              <h1>Exercise 2</h1>
-              <div>Counter: {this.state.counter}</div>
+              <h1>Click counter<br /> with React</h1>
+              <div>You clicked {this.state.counter} times</div>
               <button onClick={this.buttonIncrement}>+</button>
               <button onClick={this.buttonDecrement}>-</button>
               <button className="btn--reset" onClick={this.buttonReset}>Reset</button>

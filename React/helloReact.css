@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background: linear-gradient(217deg, rgba(255,0,0,.6), rgba(255,0,0,0) 75.71%),
+  linear-gradient(127deg, rgba(0,255,0,.5), rgba(179, 255, 0, 0) 70.71%),
+      linear-gradient(316deg, rgba(0,0,255,.6), rgba(0,0,255,0) 85.71%);
+      font-family: 'Open Sans Condensed', sans-serif;
+}
+div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+h1 {
+  color: whitesmoke;
+  font-size: 14vw;
+}

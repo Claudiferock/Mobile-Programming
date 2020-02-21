@@ -6,8 +6,8 @@ export default function App() {
   const [inputItem, setInputItem] = useState('');
   const [data, setData] = useState([]);
 
-  const buttonPressed = (argument) => {
-    (argument == 'Add') ? (
+  const buttonPressed = (params) => {
+    (params == 'Add') ? (
       setData([...data, {key: inputItem}]),
       setInputItem(''))
     : setData('');
