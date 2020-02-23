@@ -46,8 +46,8 @@
             <div>
               <h1>Click counter<br /> with React</h1>
               <div>You clicked {this.state.counter} times</div>
-              <button onClick={this.buttonIncrement}>+</button>
-              <button onClick={this.buttonDecrement}>-</button>
+              <button className="btn--clicked" onClick={this.buttonIncrement}>+</button>
+              <button className="btn--clicked" onClick={this.buttonDecrement}>-</button>
               <button className="btn--reset" onClick={this.buttonReset}>Reset</button>
 
             </div>

@@ -13,6 +13,9 @@ div {
 
 }
 h1 {
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 1);
+  -webkit-text-stroke-width: .8px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, .8);
+  text-shadow: -18px 14px 4px rgba(0, 0, 0, 0.16);
   font-size: 14vw;
 }

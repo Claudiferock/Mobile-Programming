@@ -1,41 +1,48 @@
 body {
   margin: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: radial-gradient(circle, rgb(22, 157, 135), rgb(0, 104, 87));
+  background: radial-gradient(circle, rgb(22, 157, 135) 20%, rgb(0, 104, 87));
   font-family: 'Open Sans Condensed', sans-serif;
   color: whitesmoke;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 h1 {
   font-size: 8vw;
+  text-shadow: -18px 14px 4px rgba(0, 0, 0, 0.16);
 }
 button {
   color: whitesmoke;
-  margin:1rem .2rem;
+  margin: 0 .4rem;
   height: 40px;
   width: 50px;
   border-radius: 10px;
-  border: .15em solid rgb(248, 169, 35);
-  background: transparent;
-  
+  border: .15em solid transparent;
+  background: rgb(248, 169, 35);
+  box-shadow: -.8rem .5rem .5rem rgba(68, 61, 61, .4);
 }
-button:hover {
+.btn--clicked:hover {
   background: rgb(248, 169, 35);
   transition-property: background;
   transition-duration: 300ms;
+  border: .15em solid rgba(245, 245, 245, 0.6);
 }
-button:active {
-  font-weight: bold;
-  border-color: rgba(245, 245, 245, 0.6);
+.btn--clicked:active {
+  border-color: whitesmoke;
+  color: white;
 }
 .btn--reset {
   height: 40px;
   width: 80px;
-  border-color: rgb(238, 33, 57);
+  background: rgb(238, 33, 57);
 }
 .btn--reset:hover {
-  background: rgb(238, 33, 57);
+  border: .15em solid rgba(255, 255, 255, 0.6);
+}
+.btn--reset:active {
+  background-color: rgb(157, 0, 18);
+  border: .15em solid rgb(255, 255, 255);
 }
