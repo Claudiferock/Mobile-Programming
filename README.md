@@ -1,7 +1,5 @@
-# Mobile Programming Repository
-Repository for Haaga-Helia's BIT course <strong>Mobile Programming</strong> held by Juha Hinkula.
-The course starts with React moving fast into React Native.
-
+# Mobile Programming Challanges
+This repository is based on [Juha Hinkula](http://juhahinkula.github.io/juhahinkula.github.io/aboutme/)'s challanges for his Mobile Programming course at [Haaga-Helia](http://www.haaga-helia.fi/en/frontpage), which starts with React and moving fast into React Native.  
 
 ## [React Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React)
 R01: Helo World  
