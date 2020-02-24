@@ -5,7 +5,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: radial-gradient(circle, rgb(22, 157, 135) 20%, rgb(0, 104, 87));
+  background: radial-gradient(circle, rgba(22, 157, 135) 20%, rgb(0, 104, 87));
   font-family: 'Open Sans Condensed', sans-serif;
   color: whitesmoke;
   font-size: 3vw;
@@ -21,28 +21,32 @@ button {
   width: 50px;
   border-radius: 10px;
   border: .15em solid transparent;
-  background: rgb(248, 169, 35);
+  background: rgba(157, 22, 123, .7);
   box-shadow: -.8rem .5rem .5rem rgba(68, 61, 61, .4);
 }
-.btn--clicked:hover {
-  background: rgb(248, 169, 35);
-  transition-property: background;
-  transition-duration: 300ms;
+button:hover{
+  transition: all 200ms;
   border: .15em solid rgba(245, 245, 245, 0.6);
 }
-.btn--clicked:active {
-  border-color: whitesmoke;
-  color: white;
+button:active{
+  box-shadow: none;
+  background: rgba(157, 22, 123,5);
+}
+[class$='__plus']:active {
+  border: .5em double rgb(22, 157, 56);
+}
+[class$='__minus']:active {
+ /*  background: rgb(157, 22, 123); */
+  border: .5em double rgb(157, 0, 18);
 }
 .btn--reset {
   height: 40px;
   width: 80px;
   background: rgb(238, 33, 57);
 }
-.btn--reset:hover {
-  border: .15em solid rgba(255, 255, 255, 0.6);
-}
 .btn--reset:active {
+  font-size: 1rem;
   background-color: rgb(157, 0, 18);
-  border: .15em solid rgb(255, 255, 255);
+  border: .5em double rgb(238, 33, 57);
+  transition: all 150ms;
 }
