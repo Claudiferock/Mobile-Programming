@@ -1,8 +1,8 @@
-# Mobile Programming Challanges
-This repository is based on [Juha Hinkula](http://juhahinkula.github.io/juhahinkula.github.io/aboutme/)'s challanges for his Mobile Programming course at [Haaga-Helia](http://www.haaga-helia.fi/en/frontpage), which starts with React and moving fast into React Native.  
+# Mobile Programming Challenges
+This repository is based on [Juha Hinkula](http://juhahinkula.github.io/juhahinkula.github.io/aboutme/)'s challenges for his Mobile Programming course at [Haaga-Helia](http://www.haaga-helia.fi/en/frontpage), which starts with React and moving fast into React Native.  
 
 ## [React Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React)
-R01: Helo World  
+R01: Hello World  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png" alt="Screenshot of simple 'hello world' react app" width="512"/></a>
 
 
@@ -24,10 +24,10 @@ R05: Weather API
 R06: List
 
 
-R07: Repositories List
+R07: Repositories list
 
 
-R08: Repositories List with Search
+R08: Repositories list with Search
 
 
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.png" alt="Screenshot of Repositories List app with Search functionality" width="512"/></a>  
@@ -51,7 +51,7 @@ R08: Repositories List with Search
 RN05: Calculator (Multipage)
 
 
-RN06: Guessing Game with high score
+RN06: Guessing game with high score
 
 
 RN07: Recipe finder
