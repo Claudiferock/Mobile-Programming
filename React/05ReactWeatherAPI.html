@@ -25,11 +25,12 @@
             name: '',
             temperature: '', 
             weather: '', 
-            image: ''
+            image: '',
+            query: 'Helsinki',
           };
         }
         componentDidMount() {
-          fetch('https://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=imperial&APPID=5ff1f1e9eb2d0a2bd5de99a805904392')
+          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.query}&units=metric&APPID=5ff1f1e9eb2d0a2bd5de99a805904392`)
           .then((response) => response.json()) 
           .then((response) => { 
              console.log(response);
