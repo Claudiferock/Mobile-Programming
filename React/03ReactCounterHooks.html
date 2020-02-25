@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>React getting started</title>
 
-    <link rel="stylesheet" href="reactCounter.css"/>
+    <link rel="stylesheet" href="./css/reactCounter.css"/>
   </head>
   <body>
     <!-- Root container for react components -->
@@ -14,22 +14,6 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-    <script type="text/babel">
-      function HooksCounter() {
-        const [count, setCount] = React.useState(0);
-
-        return (
-          <div>
-            <h1>Click counter<br />with React Hooks</h1>
-            <p>Your current click count is {count}</p>
-            <button className="btn--clicked__plus" onClick={() => setCount(count + 1)}>+</button>
-            <button className="btn--clicked__minus" onClick={() => setCount(count - 1)}>-</button>
-            <button className="btn--reset" onClick={() => setCount(0)}>RESET</button>
-          </div>
-        );
-      };
-
-      ReactDOM.render(<HooksCounter />, document.getElementById("root"));
-    </script>
+    <script src="./js/03ReactCounterHooks.js" type="text/babel"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>React getting started</title>
 
-    <link rel="stylesheet" href="reactList.css"/>
+    <link rel="stylesheet" href="./css/reactList.css"/>
   </head>
   <body>
     <!-- Root container for react components -->
@@ -13,42 +13,6 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     
-    <script type="text/babel">
-      const RestList = () => {
-        const [listItems, setListItems] = React.useState([]);
-    
-        React.useEffect(() => {
-          fetch('https://reqres.in/api/users')
-          .then(response => response.json()) 
-          .then(responseData => { 
-            setListItems(responseData.data)
-          })
-          .catch(err => console.error(err))
-        }, [])
-        
-        const itemRows = listItems.map((person) => 
-            <tr key={person.id}>
-              <td className="avatar"><img src={person.avatar}/></td>
-              <td>{person.first_name}</td>
-              <td>{person.last_name}</td>
-              <td>{person.email}</td>
-            </tr>
-         )
-           
-          return (
-            <div>
-              <h2>Persons</h2>
-              <table>
-                <tbody>
-                  <tr><th></th><th>First name</th><th>Last name</th><th>Email</th></tr>
-                  {itemRows}
-                </tbody>
-              </table>
-            </div>
-          );
-      }
-
-      ReactDOM.render(<RestList />, document.getElementById('root'));
-    </script>
+    <script src="./js/06RestList.js" type="text/babel"></script>
   </body>
 </html>

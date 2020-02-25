@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Mobile Programming: React basics exercise2</title>
 
-    <link rel="stylesheet" href="reactCounter.css"/>
+    <link rel="stylesheet" href="./css/reactCounter.css"/>
 
   </head>
   <body>
@@ -15,47 +15,6 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     
-    <script type="text/babel">
-      class Counter extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {counter: 0};
-        }
-        buttonIncrement = () => {
-          this.setState((prevState) => {
-            return {counter: prevState.counter + 1}
-          });
-        }
-        buttonDecrement = () => {
-          if (this.state.counter <= 0) {
-            buttonReset();
-          }
-        else {
-            this.setState((prevState) => {
-            return {counter: prevState.counter - 1}
-          });  
-    }
-        
-        }
-        buttonReset = () => {
-        this.setState({counter: 0 }
-        )};
-        
-        render() { 
-          return (
-            <div>
-              <h1>Click counter<br /> with React</h1>
-              <div>Your current click count is {this.state.counter}</div>
-              <button className="btn--clicked__plus" onClick={this.buttonIncrement}>+</button>
-              <button className="btn--clicked__minus" onClick={this.buttonDecrement}>-</button>
-              <button className="btn--reset" onClick={this.buttonReset}>RESET</button>
-
-            </div>
-          );
-        }
-      }
-      
-      ReactDOM.render(<div><Counter /></div>, document.getElementById('root'));
-    </script>
+    <script src="./js/02ReactCounter.js" type="text/babel"></script>
   </body>
 </html>
