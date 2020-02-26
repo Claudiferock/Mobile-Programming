@@ -31,8 +31,8 @@ class Weather extends React.Component {
   render() { 
     return (
       <div>
-        <div>
-          <input type="text" onChange={this.setQuery} value={this.state.query}/>
+        <div className="search">
+          <input className="search__input" type="text" onChange={this.setQuery} placeholder='Search another city...' value={this.state.query}/>
         </div>
         <section className="content__card">
           <h1>{this.state.name}</h1>

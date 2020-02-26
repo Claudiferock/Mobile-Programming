@@ -21,16 +21,25 @@ R04: Trivia
 R05: Weather API
 
 
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R05.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R05.png" alt="Screenshot of eather API app" width="512"/></a>  
+
+
 R06: List
+
+
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R06.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R06.png" alt="Screenshot of React list app" width="512"/></a>  
 
 
 R07: Repositories list
 
 
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R07.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R07.png" alt="Screenshot of Repositories list app" width="512"/></a>  
+
+
 R08: Repositories list with Search
 
 
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.png" alt="Screenshot of Repositories List app with Search functionality" width="512"/></a>  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.gif" alt="Screenshot of Repositories List app with Search functionality" width="512"/></a>  
 
 
 ## [React Native Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native)

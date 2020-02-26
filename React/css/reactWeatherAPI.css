@@ -36,3 +36,14 @@ h1 {
   /* background-color: rgba(240, 248, 255, 0.486); */
   margin-top: -30px;
 }
+.search {
+  margin-bottom: 20px;
+}
+.search__input{
+  font-size: 1em;
+  width: 13.6rem;
+  border: .5px solid #ed213a;
+  border-radius: 5px;
+  padding-left: 5px;
+  caret-color: #ed213a;
+}
