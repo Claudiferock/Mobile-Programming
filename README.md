@@ -44,11 +44,11 @@ R08: Repositories list with Search
 
 ## [React Native Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native)
 [RN01](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/01calculator): Calculator  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg" alt="Screenshot of React Native Calculator app with operations history" width="160"/></a>
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg" alt="Screenshot of React Native Calculator app" width="160"/></a>
 
 
 [RN02](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/02numberGuessingGame): Number guessing game  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg" alt="Screenshot of React Native Calculator app with operations history" width="160"/></a> <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg" alt="Screenshot of React Native Calculator app with operations history" width="160"/></a>
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg" alt="Screenshot of React Native guessing game app" width="160"/></a> <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg" alt="Screenshot of React Native guessing game app" width="160"/></a>
 
 
 [RN03](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/03historicCalculator): Calculator (with operations history)  
