@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Text, TextInput, View, Button, StyleSheet } from "react-native";
 
-export default function CalculatorScreen() {
+export default function CalculatorScreen(props) {
+    navigationOptions = {title: 'Calculator',};
 
     const [inputNum1, setInput1] = useState('');
     const [inputNum2, setInput2] = useState('');
     const [result, setResult] = useState(0);
     const [history, setHistory] = useState([]);
+
+    const { navigate } = props.navigation;
   
     const buttonPressed = (operator) => {
       let operation = '';
@@ -46,19 +49,25 @@ export default function CalculatorScreen() {
               <Button color="tomato" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
             </View>
           </View>
-    
+
+          <View style={styles.sectionNavigation}>
+            <Button color="coral" accessibilityLabel="Navigate to Previous Operations" style={styles.buttonNavigation} onPress={() => navigate('History')} title="Previous Operations"/>
+          </View>
+
         </View>
       );
 }
 
+CalculatorScreen.navigationOptions = ({ navigate }) => ({ title: 'Calculator'});
+
 const styles = StyleSheet.create({
-    container: {
-      flex: 1.2,
-      flexDirection: "column",
-      justifyContent: 'center',
-      alignItems: 'stretch',
-      backgroundColor: '#24292e',
-      color: 'white',
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    color: 'white',
+    backgroundColor: '#24292e',
     },
     result: {
       color: 'white',
@@ -76,7 +85,7 @@ const styles = StyleSheet.create({
       borderBottomRightRadius: 35,
     },
     action: {
-      flex: 2.4,
+      flex: 3,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
@@ -105,4 +114,15 @@ const styles = StyleSheet.create({
       width: 40,
       height: 100,
     },
+    sectionNavigation: {
+      flex: 1,
+      alignItems: 'center',
+      paddingTop: 20,
+      backgroundColor: 'rgba(255, 127, 80, .5)',
+      borderTopLeftRadius: 15,
+      borderTopRightRadius: 15,
+    },
+    buttonNavigation: {
+      marginHorizontal: 20,
+    }
   });
