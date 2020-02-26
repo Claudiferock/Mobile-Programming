@@ -34,12 +34,12 @@ export default function App() {
             />
         </View>
         <View style={styles.buttonContainer}>
-          <Button color="tomato" title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
-          <Button color="tomato" title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
+          <Button color="black" title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
+          <Button color="black" title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
         </View>
         <View style={styles.buttonContainer}>
-          <Button color="tomato" title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
-          <Button color="tomato" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
+          <Button color="black" title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
+          <Button color="black" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
         </View>
       </View>
     </View>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: '#24292e',
+    backgroundColor: 'magenta',
     color: 'white',
   },
   result: {
@@ -60,13 +60,15 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: "center",
     textAlignVertical: "center",
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255,255,0,.8)',
     fontSize: 98,
-    textShadowColor: 'tomato',
-    textShadowOffset: {width: -1, height: 1},
+    textShadowColor: 'black',
+    textShadowOffset: {width: -6, height: 5},
     textShadowRadius: 10,
-    borderColor: 'tomato',
-    borderWidth: 1,
+    borderColor: 'yellow',
+    borderWidth: 4,
+    borderTopWidth: 0,
+    borderBottomWidth: 8,
     borderBottomLeftRadius: 35,
     borderBottomRightRadius: 35,
   },
@@ -83,16 +85,16 @@ const styles = StyleSheet.create({
     fontSize: 84,
   },
   inputText: {
-    color: 'gainsboro',
+    color: 'white',
     fontSize: 84,
     width: 140,
     marginHorizontal: 10,
     marginVertical: 8,
     paddingRight: 8,
-    backgroundColor: '#202325',
-    borderColor: 'coral',
+    backgroundColor: 'rgba(0,0,0,.4)',
+    borderColor: 'rgb(0,255,255)',
     borderRadius: 5,
-    borderWidth: 1,
+    borderWidth: 3,
     textAlign: "right",
   },
   buttonContainer: {
