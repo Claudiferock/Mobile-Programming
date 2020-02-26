@@ -15,10 +15,11 @@ const SearchRepos = () => {
     .catch(err => console.error(`UPS! `+err))
   }
 
-  const handleChange = () => {
-    setQuery(event.target.value);
-    console.log(`query: `+ query);
-    fetchData();
+  const handleChange = async () => {
+    await setQuery(event.target.value);
+    /* fetchData(); */
+    /* console.log(`query: `+ query) */;
+    return console.log(`query: `+ query);
   }
   
   const itemRows = listItems.map((repo) => 
