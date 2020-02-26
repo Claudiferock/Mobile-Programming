@@ -2,12 +2,12 @@
 
 ## RN01: Calculator
 Simple calculator that takes in two TextInputs, with buttons for adding and substracting.  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg" alt="Screenshot of React Native Calculator app with operations history" width="238"/></a>  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg" alt="Screenshot of React Native Calculator app" width="238"/></a>  
 ## RN02: Number guessing game
-Number guessing game (between 1 - 100), that hints you if too high or too low and tells you in how many tries to you guessed right. 
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg" alt="Screenshot of React Native Calculator app with operations history" width="238"/></a><a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg" alt="Screenshot of React Native Calculator app with operations history" width="238"/></a>  
+Number guessing game (between 1 - 100), that hints you if too high or too low and tells you in how many tries to you guessed right.  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg" alt="Screenshot of React Native number guessing game app" width="238"/></a> <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg" alt="Screenshot of React Native number guessing game app" width="238"/></a>  
 ## RN03: Calculator (with operations history)
-Just as RN02, but it also shows your previous operations (FlatList)
+Just as RN02, but it also shows your previous operations (FlatList)  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN03.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN03.jpeg" alt="Screenshot of React Native Calculator app with operations history" width="238"/></a>  
 
 ## RN04: Shopping List
