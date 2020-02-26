@@ -64,3 +64,18 @@ RN09: Address finder
 
 
 RN10: Restaurant finder (Optional)
+
+
+RN11: Current map position marker 
+
+
+RN12: Shopping list with DB (SQLite)
+
+
+RNOPT: Shopping list with Firebase (real time DB)
+
+
+RN13: Shopping list with polished UI (React Native Element UI Toolkit)
+
+
+RN14: My places app

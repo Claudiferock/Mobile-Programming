@@ -17,7 +17,7 @@ Multipage calculator with one page for "calculations" and the other page for "op
 
 
 ## RN06: Guessing Game with high score
-Number guessing game with highscore (using AsyncStorage).
+Number guessing game with high score (using AsyncStorage).
 
 
 ## RN07: Recipe finder
@@ -30,3 +30,18 @@ Number guessing game with highscore (using AsyncStorage).
 
 
 ## RN10: Restaurant finder (Optional)
+
+
+## RN11: Current map position marker 
+
+
+## RN12: Shopping list with DB (SQLite)
+
+
+## RNOPT: Shopping list with Firebase (real time DB)
+
+
+## RN13: Shopping list with polished UI (React Native Element UI Toolkit)
+
+
+## RN14: My places app

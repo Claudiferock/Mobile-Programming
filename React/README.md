@@ -4,7 +4,7 @@ Before digging into React Native, we went through some React exercises.
 
 <br/>  
 
-## R01: Helo World
+## R01: Hello World
 Simple 'Hello World' react app  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png" alt="Screenshot of simple 'hello world' react app" width="720"/></a>  
 ## R02: Click Counter  
