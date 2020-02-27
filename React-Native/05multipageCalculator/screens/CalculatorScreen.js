@@ -51,14 +51,18 @@ export default function CalculatorScreen(props) {
           </View>
 
           <View style={styles.sectionNavigation}>
-            <Button color="coral" accessibilityLabel="Navigate to Previous Operations" style={styles.buttonNavigation} onPress={() => navigate('History')} title="Previous Operations"/>
+            <Button color="coral"
+              accessibilityLabel="Navigate to Previous Operations"
+              style={styles.buttonNavigation}
+              onPress={ () => navigate('History', {history: history} ) }
+              title="History"/>
           </View>
 
         </View>
       );
 }
 
-CalculatorScreen.navigationOptions = ({ navigate }) => ({ title: 'Calculator'});
+CalculatorScreen.navigationOptions = ({ navigate }) => ({ title: 'Calculator' });
 
 const styles = StyleSheet.create({
   container: {

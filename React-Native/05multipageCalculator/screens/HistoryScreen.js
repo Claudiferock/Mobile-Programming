@@ -1,16 +1,22 @@
-import { React } from "react";
+import React, { useState }  from "react";
 import { View, StyleSheet, Text, FlatList, Button } from "react-native";
 
 export default function HistoryScreen(props) {
-    navigationOptions = {title: 'History',};
+   /*  navigationOptions = {title: 'History',}; */
 
-    const { navigate } = props.navigation;
+    const { params } = props.navigation.state;
+
+    /* const { navigate } = props.navigation; */
 
     return (
         <View style={styles.container}>
-    
           <View style={styles.history}>
-            <Text style={styles.historyText}> Calculations History</Text>      
+            <Text style={styles.historyText}>Calculations History</Text>
+            <FlatList
+              data={ params.history }
+              renderItem={ ({item}) => 
+                <Text style={styles.historyText}>{ item.key }</Text>}
+            />        
           </View>
         </View>
       );
