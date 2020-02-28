@@ -6,6 +6,11 @@ export default function CalculatorScreen(props) {
 
     const [inputNum1, setInput1] = useState('');
     const [inputNum2, setInput2] = useState('');
+    // maybe saving the input into a list is better
+    /* const [inputNum2, setInput2] = useState([]); */
+    const [currentInput, setCurrentInput] = useState();
+    const [currentOperator, setCurrentOperator] = '';
+    const [calculation, setCalculation] = useState(0);
     const [result, setResult] = useState(0);
     const [history, setHistory] = useState([]);
 
@@ -13,49 +18,70 @@ export default function CalculatorScreen(props) {
   
     const buttonPressed = (operator) => {
       let operation = '';
-      (operator == '+') ? (setResult(parseInt(inputNum1) + parseInt(inputNum2)))
-      : (operator == '-') ? setResult(parseInt(inputNum1) - parseInt(inputNum2))
-      : (operator == '*') ? setResult(parseInt(inputNum1) * parseInt(inputNum2))
-      : setResult(parseInt(inputNum1) / parseInt(inputNum2));
+      (operator == '+') ? setCalculation(calculation + parseInt(inputNum2))
+      : (operator == '-') ? setCalculation(calculation - parseInt(inputNum2))
+      : (operator == '*') ? 
+        ((calculation == 0) ? setCalculation(parseInt(inputNum2))
+        : setCalculation(calculation * parseInt(inputNum2)))
+      : (operator == '/') ? 
+        ((calculation == 0) ? setCalculation(parseInt(inputNum2)) 
+        : (setCalculation / parseInt(inputNum2)))
+      : (setResult(calculation));
   
-      operation = `${inputNum1} ${operator} ${inputNum2} = ${result}`;
+      (operator !== '=') ? operation = `${calculation} ${operator} ${inputNum2} = ${result}` : null;
       setHistory([...history, {key: operation}]);
+      setResult(calculation);
+      // shoud also set the value of current input to zero
+      setCurrentInput(0);
+      console.log(`operation carried out. current input is ${currentInput} and saved input ${inputNum2}`);
+    }
+
+    // 
+    const handleInput = (num) => {
+      setCurrentInput(0 + parseInt(num));
+      console.log('01 current input: ', currentInput);
+      console.log('01 current input type: ', typeof(currentInput));
+      /* setInput2([...inputNum2, {key: parseInt(currentInput)}]); */ //in case I save it to a list
+      setInput2(currentInput);
+      console.log('02 saved input: ', inputNum2);
+      console.log('02 saved input type: ', typeof(inputNum2));
     }
 
     return (
         <View style={styles.container}>
           <Text style={styles.result} >{ result }</Text>
           <View style={styles.action}>
-            <View>
-              <TextInput
+            <View style={styles.inputContainer}>
+{/*               <TextInput
                 style={styles.inputText}
                 keyboardType='number-pad' 
                 onChangeText={(inputNum1) => setInput1(inputNum1)}
                 value={ inputNum1 }
-              />
+              /> */}
               <TextInput
                 style={styles.inputText}
                 keyboardType='number-pad'
-                onChangeText={(inputNum2) => setInput2(inputNum2)}
-                value={ inputNum2 }
+                onChangeText={(currentInput) => handleInput(parseInt(currentInput))}
+                value={ currentInput }
                 />
             </View>
+
             <View style={styles.buttonContainer}>
-              <Button color="tomato" title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
-              <Button color="tomato" title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
-            </View>
-            <View style={styles.buttonContainer}>
-              <Button color="tomato" title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
-              <Button color="tomato" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
+              <Button color="tomato" style={styles.buttons} title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
+              <Button color="tomato" style={styles.buttons} title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
+              <Button color="tomato" style={styles.buttons} title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
+              <Button color="tomato" style={styles.buttons} title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
+              <Button color="tomato" style={styles.buttons} title="=" accessibilityLabel="Division button" onPress={() => buttonPressed('=')}/>
+              <Button color="coral"
+                accessibilityLabel="Navigate to Previous Operations"
+                style={styles.buttonNavigation}
+                onPress={ () => navigate('History', {history: history} ) }
+                title="History"
+              />
             </View>
           </View>
 
           <View style={styles.sectionNavigation}>
-            <Button color="coral"
-              accessibilityLabel="Navigate to Previous Operations"
-              style={styles.buttonNavigation}
-              onPress={ () => navigate('History', {history: history} ) }
-              title="History"/>
           </View>
 
         </View>
@@ -90,33 +116,39 @@ const styles = StyleSheet.create({
     },
     action: {
       flex: 3,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
+      backgroundColor: 'rgba(0, 0, 255, 1)',
+
+      alignItems: 'stretch',
+      alignContent: 'flex-start',
+      flexWrap: 'wrap',
     },
     inputContainer: {
-      flexDirection: 'row',
-      fontSize: 84,
+      flex: 1,
+      backgroundColor: 'rgba(255,0,255,.6)',
     },
     inputText: {
       color: 'gainsboro',
       fontSize: 72,
-      width: 120,
+      width: 380,
       marginHorizontal: 10,
       marginVertical: 8,
-      paddingRight: 8,
       backgroundColor: '#202325',
       borderColor: 'coral',
       borderRadius: 5,
       borderWidth: 1,
-      textAlign: "right",
+      textAlign: "center",
     },
     buttonContainer: {
-      flexDirection: 'column',
+      backgroundColor: 'rgba(255,255,0, 0.6)',
+      flex: 1,
+      flexDirection: 'row',
       justifyContent: 'space-around',
-      marginHorizontal: 8,
-      width: 40,
-      height: 100,
+      alignItems: 'center',
+      flexWrap: 'wrap',
+    },
+    buttons: {
+      width: 60,
+      height: 30,
     },
     sectionNavigation: {
       flex: 1,
