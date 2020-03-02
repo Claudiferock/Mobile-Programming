@@ -8,7 +8,7 @@ export default function App() {
   const [message, setMessage] = useState('Try a number between 1-100');
   const [randomNum, setRandomNum] = useState((Math.floor(Math.random() * 100) + 1));
   const [count, setCount] = useState(0);
-  const [highScore, setHighscore] = useState(0);
+  const [highScore, setHighscore] = useState(null);
 
   const buttonPressed = (urGuess) => {
     (parseInt(urGuess) < randomNum) ? (
@@ -17,7 +17,7 @@ export default function App() {
     : (parseInt(urGuess) > randomNum) ? (
       setCount(count+1),
       setMessage(`Your guess ${inputNum} is too high. Please try again!`))
-    : (parseInt(urGuess) == randomNum) ? setMessage(`You guesssed the number "${inputNum}" in ${count} tries!`)
+    : (parseInt(urGuess) == randomNum) ? numbreGuessed()
     : setMessage(
       setCount(count+1),
       (`${inputNum} is not a number, try again!`))
@@ -29,6 +29,17 @@ export default function App() {
     } catch (error) {
       console.error('Error while reading data...', error);
     }
+  }
+
+  numbreGuessed = ()=> {
+    setMessage(`You guesssed the number "${inputNum}" in ${count} tries!`);
+    // if there is no prev highscore make current count the highscore
+    // but if there is then check if highscore has lower count
+    (highScore == null) ? setHighscore(count) 
+      : ( (highScore < count) ? setHighscore(count) : count );   
+    console.log('highscore: ', highScore);
+    setCount(0);
+    setRandomNum(Math.floor(Math.random() * 100) + 1);
   }
 
   return (
@@ -54,7 +65,7 @@ export default function App() {
         </View>
         <View style={styles.highScore} >
           <Text style={styles.highScoreText} >High scores</Text>
-          <Text style={styles.highScoreText} ></Text>
+          <Text style={styles.highScoreText} >{highScore} tries</Text>
         </View> 
       </View>
     </ImageBackground>
