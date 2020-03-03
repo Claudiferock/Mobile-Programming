@@ -59,10 +59,12 @@ R08: Repositories list with Search
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg" alt="Screenshot of React Native shopping list app" width="160"/></a>
 
 
-RN05: Calculator (Multipage)
+RN05: Calculator (Multipage)  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg" alt="Screenshot of React Native multipage calculator app" width="160"/></a>   
 
 
-RN06: Guessing game with high score
+[RN06](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/06highScoreGuessingGame): Guessing game with high score  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg" alt="Screenshot of React Native guessing game app with high score" width="160"/></a>  
 
 
 RN07: Recipe finder

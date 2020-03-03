@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Blank Template",
+    "name": "RN02 Number Guessing Game",
     "slug": "02numberGuessingGame",
     "privacy": "public",
     "sdkVersion": "36.0.0",

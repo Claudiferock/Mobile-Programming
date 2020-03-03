@@ -15,11 +15,13 @@ Simple shopping list, where you can add items to the list or clear the list.
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg" alt="Screenshot of React Native shopping list app" width="238"/></a> 
 
 ## RN05: Calculator (Multipage)
-Multipage calculator with one page for "calculations" and the other page for "operations history".
+Multipage calculator with one page for "calculations" and the other page for "operations history".  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg" alt="Screenshot of React Native multipage calculator app" width="238"/></a>  
 
 
 ## RN06: Guessing Game with high score
-Number guessing game with high score (using AsyncStorage).
+Number guessing game with high score (using AsyncStorage).  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg" alt="Screenshot of React Native guessing game app with high score" width="238"/></a>  
 
 
 ## RN07: Recipe finder

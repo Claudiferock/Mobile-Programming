@@ -4,22 +4,28 @@ import { Text, TextInput, View, Button, StyleSheet } from "react-native";
 export default function CalculatorScreen(props) {
     navigationOptions = {title: 'Calculator',};
 
-    const [inputNum1, setInput1] = useState('');
-    const [inputNum2, setInput2] = useState('');
+    const [inputNum1, setInput1] = useState(0);
+    const [inputNum2, setInput2] = useState(0);
     const [result, setResult] = useState(0);
     const [history, setHistory] = useState([]);
 
     const { navigate } = props.navigation;
   
     const buttonPressed = (operator) => {
-      let operation = '';
-      (operator == '+') ? (setResult(parseInt(inputNum1) + parseInt(inputNum2)))
-      : (operator == '-') ? setResult(parseInt(inputNum1) - parseInt(inputNum2))
-      : (operator == '*') ? setResult(parseInt(inputNum1) * parseInt(inputNum2))
-      : setResult(parseInt(inputNum1) / parseInt(inputNum2));
-  
-      operation = `${inputNum1} ${operator} ${inputNum2} = ${result}`;
-      setHistory([...history, {key: operation}]);
+      (operator == '+') ? ( setResult(parseInt(inputNum1) + parseInt(inputNum2)), calculation(operator) )
+      : (operator == '-') ? ( setResult(parseInt(inputNum1) - parseInt(inputNum2)), calculation(operator) )
+      : (operator == '*') ? ( setResult(parseInt(inputNum1) * parseInt(inputNum2)), calculation(operator) )
+      : (setResult((parseInt(inputNum1) / parseInt(inputNum2)).toFixed(2)), calculation(operator));
+      clearInput();
+    }
+
+    const calculation = (operator) => {
+      setHistory([...history, {key: `${inputNum1} ${operator} ${inputNum2} = ${result}`}]);
+    }
+
+    const clearInput = () => {
+      setInput1(0);
+      setInput2(0);
     }
 
     return (
@@ -29,29 +35,31 @@ export default function CalculatorScreen(props) {
             <View>
               <TextInput
                 style={styles.inputText}
-                keyboardType='number-pad' 
+                keyboardType='numeric' 
                 onChangeText={(inputNum1) => setInput1(inputNum1)}
                 value={ inputNum1 }
+                clearButtonMode='always'
               />
               <TextInput
                 style={styles.inputText}
-                keyboardType='number-pad'
+                keyboardType='numeric'
                 onChangeText={(inputNum2) => setInput2(inputNum2)}
                 value={ inputNum2 }
+                clearButtonMode='always'
                 />
             </View>
             <View style={styles.buttonContainer}>
-              <Button color="tomato" title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
-              <Button color="tomato" title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
+              <Button color="black" title="+" accessibilityLabel="Addition button" onPress={() => buttonPressed('+')}/>
+              <Button color="black" title="-" accessibilityLabel="Substraction button" onPress={() => buttonPressed('-')}/>
             </View>
             <View style={styles.buttonContainer}>
-              <Button color="tomato" title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
-              <Button color="tomato" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
+              <Button color="black" title="*" accessibilityLabel="Multiplication button" onPress={() => buttonPressed('*')}/>
+              <Button color="black" title="/" accessibilityLabel="Division button" onPress={() => buttonPressed('/')}/>
             </View>
           </View>
 
           <View style={styles.sectionNavigation}>
-            <Button color="coral"
+            <Button color="black"
               accessibilityLabel="Navigate to Previous Operations"
               style={styles.buttonNavigation}
               onPress={ () => navigate('History', {history: history} ) }
@@ -70,21 +78,22 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: 'center',
     alignItems: 'stretch',
-    color: 'white',
-    backgroundColor: '#24292e',
+    color: 'black',
+    backgroundColor: 'magenta',
     },
     result: {
       color: 'white',
       flex: 1,
       textAlign: "center",
       textAlignVertical: "center",
-      backgroundColor: 'white',
+      backgroundColor: 'rgba(255,255,0,.8)',
       fontSize: 98,
-      textShadowColor: 'tomato',
-      textShadowOffset: {width: -1, height: 1},
+      textShadowColor: 'black',
+      textShadowOffset: {width: -6, height: 1},
       textShadowRadius: 10,
-      borderColor: 'tomato',
-      borderWidth: 1,
+      borderColor: 'yellow',
+      borderWidth: 4,
+      borderBottomWidth: 8,
       borderBottomLeftRadius: 35,
       borderBottomRightRadius: 35,
     },
@@ -99,14 +108,14 @@ const styles = StyleSheet.create({
       fontSize: 84,
     },
     inputText: {
-      color: 'gainsboro',
+      color: 'white',
       fontSize: 72,
       width: 120,
       marginHorizontal: 10,
       marginVertical: 8,
       paddingRight: 8,
-      backgroundColor: '#202325',
-      borderColor: 'coral',
+      backgroundColor: 'rgba(0,0,0,.4)',
+      borderColor: 'rgb(0,255,255)',
       borderRadius: 5,
       borderWidth: 1,
       textAlign: "right",
@@ -122,9 +131,7 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       paddingTop: 20,
-      backgroundColor: 'rgba(255, 127, 80, .5)',
-      borderTopLeftRadius: 15,
-      borderTopRightRadius: 15,
+      backgroundColor: 'rgba(0, 0, 0, .05)',
     },
     buttonNavigation: {
       marginHorizontal: 20,

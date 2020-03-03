@@ -12,15 +12,14 @@ export default function App() {
 
   const buttonPressed = (urGuess) => {
     (parseInt(urGuess) < randomNum) ? (
-      setCount(count+1),
+      wrongGuess(),
       setMessage(`Your guess ${inputNum} is too low. Please try again!`))
     : (parseInt(urGuess) > randomNum) ? (
-      setCount(count+1),
+      wrongGuess(),
       setMessage(`Your guess ${inputNum} is too high. Please try again!`))
-    : (parseInt(urGuess) == randomNum) ? numbreGuessed()
-    : setMessage(
-      setCount(count+1),
-      (`${inputNum} is not a number, try again!`))
+    : (parseInt(urGuess) == randomNum) ? numberGuessed()
+    : (wrongGuess(),
+      setMessage(`${inputNum} is not a number, try again!`))
   }
 
   readData = async () => {
@@ -31,14 +30,20 @@ export default function App() {
     }
   }
 
-  numbreGuessed = ()=> {
-    setMessage(`You guesssed the number "${inputNum}" in ${count} tries!`);
+  wrongGuess = () => {
+    setCount(count+1);
+    setInputNum(0);
+  }
+
+  numberGuessed = () => {
+    setMessage(`YES!! it was ${inputNum}! You guessed in ${count} tries, try again faster :D`);
     // if there is no prev highscore make current count the highscore
     // but if there is then check if highscore has lower count
     (highScore == null) ? setHighscore(count) 
-      : ( (highScore < count) ? setHighscore(count) : count );   
+      : ( (highScore > count) ? setHighscore(count) : count );
     console.log('highscore: ', highScore);
     setCount(0);
+    setInputNum(0);
     setRandomNum(Math.floor(Math.random() * 100) + 1);
   }
 
