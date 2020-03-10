@@ -23,8 +23,13 @@ const RestList = () => {
       <div>
         <h2>Persons</h2>
         <table>
+          <thead>
+            <tr><th scope="col"></th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th></tr>
+          </thead>
           <tbody>
-            <tr><th></th><th>First name</th><th>Last name</th><th>Email</th></tr>
             {itemRows}
           </tbody>
         </table>

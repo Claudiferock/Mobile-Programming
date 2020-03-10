@@ -40,8 +40,14 @@ const SearchRepos = () => {
         </nav>
         <h1 className="title">Repositories</h1>
         <table>
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Repository Name</th>
+              <th scope="col">URL</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><th></th><th>Repository Name</th><th>URL</th></tr>
             {itemRows}
           </tbody>
         </table>

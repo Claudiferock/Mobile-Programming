@@ -25,8 +25,14 @@ const RepoSimpleList = () => {
         </nav>
         <h1 className="title">Github Repositories</h1>
         <table>
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Name</th>
+              <th scope="col">URL</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><th></th><th>Name</th><th>URL</th></tr>
             {itemRows}
           </tbody>
         </table>
