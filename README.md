@@ -67,7 +67,8 @@ R08: Repositories list with Search
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg" alt="Screenshot of React Native guessing game app with high score" width="160"/></a>  
 
 
-RN07: Recipe finder
+[RN07](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/07recipeFinder): Recipe finder  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg" alt="Screenshot of React Native recipe finder app" width="160"/></a>  
 
 
 RN08: Euro converter
