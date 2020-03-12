@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, FlatList, Image } from 'react-native';
 
 export default function App() {
   const [query, setQuery] = useState('');
@@ -10,7 +10,8 @@ export default function App() {
     fetch(url)
     .then((response) => response.json())
     .then((responseJson) => { 
-       setRecipes(responseJson);
+       setRecipes(responseJson.results);
+       console.log('json res: ', responseJson);
     })
     .catch((error) => { 
       console.log('Error', error); 
@@ -25,6 +26,7 @@ export default function App() {
           height: 1,
           width: "100%",
           backgroundColor: "#CED0CE",
+          marginVertical: 6,
         }}
       />
     );
@@ -32,20 +34,27 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Recipe Finder</Text>
       <View style={styles.action}>
-        <TextInput 
-          style={{fontSize: 18, width: 200}} 
+        <TextInput
+          style={styles.inputText}
           value={query} 
           placeholder="Search a recipe..."
           onChangeText={(query) => setQuery(query)} 
         />
-        <Button title="Find" onPress={getRecipes} />
+        <View style={styles.buttonContainer}>
+          <Button color='black' title="Find" onPress={getRecipes} />
+        </View>
       </View>
       <View style={styles.result}>
-        <FlatList 
-          style={{marginHorizontal : "5%"}}
+        <FlatList
           keyExtractor={item => item.key} 
-          renderItem={({ item }) => <Text>{item.results.title}, {item.results.thumbnail}</Text>} 
+          renderItem={({ item }) =>
+            <View style={styles.item}>
+              <Image style={styles.thumbnail} source={{uri: item.thumbnail ? `${item.thumbnail}` : 'https://www.freeiconspng.com/uploads/no-image-icon-4.png' }}/>
+              <Text style={styles.text}>{item.title}</Text>
+            </View>
+          } 
           ItemSeparatorComponent={listSeparator}
           data={recipes} 
         />  
@@ -55,18 +64,65 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
- container: {
-  flex: 1,
-  backgroundColor: '#fff',
-  alignItems: 'center',
-  justifyContent: 'center',
- },
- action: {
-   flex:.4,
-   justifyContent: 'flex-end',
-   marginBottom: 5,
- },
- result: {
-   flex:2,
- }
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    flex: .3,
+    fontSize: 42,
+    marginTop:20,
+    textShadowColor: 'rgba(0,0,0,.6)',
+    textShadowOffset: {width: -3, height: 2},
+    textShadowRadius: 10,
+    color: 'rgba(85,250,210, 1)',
+    textTransform: 'uppercase',
+  },
+  action: {
+    flex:.4,
+    flexDirection: "row",
+    alignItems: 'center',
+  },
+  result: {
+    flex:4,
+    marginHorizontal : "4%",
+  },
+  inputText: {
+    fontSize: 18,
+    width: 220,
+    height: 40,
+    paddingLeft: 8,
+    backgroundColor: 'rgba(85,250,210, .8)',
+    color:'gray',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  buttonContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    width: 60,
+    marginLeft: 10,
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  item: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    alignContent: 'space-around',
+  },
+  thumbnail: {
+    width: 60,
+    height: 60,
+    borderRadius: 20,
+    marginRight: 5,
+  },
+  text: {
+    fontSize: 14,
+    flexWrap: 'wrap',
+  }
 });
