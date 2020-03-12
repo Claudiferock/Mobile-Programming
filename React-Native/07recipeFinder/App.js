@@ -10,8 +10,8 @@ export default function App() {
     fetch(url)
     .then((response) => response.json())
     .then((responseJson) => { 
-       setRecipes(responseJson.results);
-       console.log('json res: ', responseJson);
+      setRecipes(responseJson.results);
+      console.log('json res: ', responseJson);
     })
     .catch((error) => { 
       console.log('Error', error); 
@@ -25,7 +25,9 @@ export default function App() {
         style={{
           height: 1,
           width: "100%",
-          backgroundColor: "#CED0CE",
+          borderStyle: 'dotted',
+          borderTopWidth: 2,
+          borderColor: 'rgb(81, 213, 185)',
           marginVertical: 6,
         }}
       />
@@ -72,18 +74,24 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: .3,
+    textAlign: 'center',
     fontSize: 42,
     marginTop:20,
+    width: '100%',
     textShadowColor: 'rgba(0,0,0,.6)',
     textShadowOffset: {width: -3, height: 2},
     textShadowRadius: 10,
     color: 'rgba(85,250,210, 1)',
     textTransform: 'uppercase',
+
   },
   action: {
     flex:.4,
+    justifyContent: 'center',
+    width: '100%',
     flexDirection: "row",
     alignItems: 'center',
+
   },
   result: {
     flex:4,
@@ -94,8 +102,8 @@ const styles = StyleSheet.create({
     width: 220,
     height: 40,
     paddingLeft: 8,
-    backgroundColor: 'rgba(85,250,210, .8)',
-    color:'gray',
+    backgroundColor: 'rgba(81, 213, 185, .7)',
+    color:'white',
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
