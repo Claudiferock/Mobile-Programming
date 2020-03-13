@@ -30,7 +30,7 @@ export default function App() {
       <View style={styles.container}>
         <View style={styles.result}>
           <Text style={styles.title}>Currency converter</Text>
-          <Text>there will be something here {output} </Text>
+          <Text style={styles.output}>there will be something here {output} </Text>
         </View>
         <View style={styles.action}>
           <TextInput 
@@ -40,7 +40,16 @@ export default function App() {
             onChangeText={(amount) => setAmount(amount)}>
           </TextInput>
           <Picker
+            selectedValue='JPY'
+            style={styles.picker}
             >
+            <Picker.Item label="US Dollar" value="USD" />
+            <Picker.Item label="British Pound" value="GBP" />
+            <Picker.Item label="Indian Rupee" value="IRP" />
+            <Picker.Item label="Australian Dollar" value="AUD" />
+            <Picker.Item label="Japanese Yen" value="JPY" />
+            <Picker.Item label="Chinese Yuan Renminbi" value="CNY" />
+            <Picker.Item label="Chilean Peso" value="CLP" />
           </Picker>
           <Button color='black' title="Find"  />
         </View>
@@ -56,35 +65,54 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   action: {
-    flex: 2,
-    backgroundColor: 'rgba(255,0,255, .4)',
+    flex: 3,
+    alignItems: 'center',
+    marginTop: 40,
+    backgroundColor: 'rgba(255,255,255, .8)',
+    borderTopStartRadius: 40,
+    borderTopEndRadius: 40,
+    width: '80%',
     
   },
   result: {
     flex: 1,
-    backgroundColor: 'rgba(255,255,0,.4)',
-
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: 'rgba(25, 22, 84,.8)',
   },
   title: {
     textAlign: 'center',
     fontSize: 32,
     marginTop:40,
     width: '100%',
-    textShadowColor: 'rgba(0,0,0,.6)',
+    textShadowColor: 'rgba(160,160,160,.7)',
     textShadowOffset: {width: -3, height: 2},
     textShadowRadius: 10,
-    color: 'rgba(2, 27, 121, 1)',
+    color: 'rgba(255, 27, 121, 1)',
     textTransform: 'uppercase',
+  },
+  output: {
+    fontSize: 24,
+    color:'white',
   },
   inputText: {
     fontSize: 18,
     width: 160,
     height: 40,
     paddingLeft: 8,
-    marginVertical: 10,
-    backgroundColor: 'rgba(81, 213, 185, .7)',
+    marginTop: 50,
+    marginBottom: 10,
+    backgroundColor: 'rgba(25, 22, 84,1)',
     color:'white',
     borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  picker: {
+    height: 50,
+    width: 160,
+    borderColor: 'rgba(25, 22, 84,.8)',
     borderWidth: 1,
     borderRadius: 5,
   },
