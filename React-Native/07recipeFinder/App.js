@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, FlatList, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, FlatList, Image, Linking } from 'react-native';
 
 export default function App() {
   const [query, setQuery] = useState('');
@@ -11,12 +11,10 @@ export default function App() {
     .then((response) => response.json())
     .then((responseJson) => { 
       setRecipes(responseJson.results);
-      console.log('json res: ', responseJson);
     })
     .catch((error) => { 
       console.log('Error', error); 
-    }); 
-    console.log('url is: ',url)
+    });
   }
   
   const listSeparator = () => {
@@ -53,8 +51,11 @@ export default function App() {
           keyExtractor={item => item.key} 
           renderItem={({ item }) =>
             <View style={styles.item}>
-              <Image style={styles.thumbnail} source={{uri: item.thumbnail ? `${item.thumbnail}` : 'https://www.freeiconspng.com/uploads/no-image-icon-4.png' }}/>
-              <Text style={styles.text}>{item.title}</Text>
+              <View style={styles.itemContent}>
+                <Image style={styles.thumbnail} source={{uri: item.thumbnail ? `${item.thumbnail}` : 'https://www.freeiconspng.com/uploads/no-image-icon-4.png' }}/>
+                <Text style={styles.text} >{item.title}</Text>
+              </View>
+              <Text style={styles.itemLink} onPress={() => Linking.openURL(item.href)} >Open</Text>
             </View>
           } 
           ItemSeparatorComponent={listSeparator}
@@ -102,8 +103,8 @@ const styles = StyleSheet.create({
     width: 220,
     height: 40,
     paddingLeft: 8,
-    backgroundColor: 'rgba(81, 213, 185, .7)',
-    color:'white',
+    backgroundColor: 'rgb(0, 0, 0)',
+    color:'rgba(81, 213, 185, .7)',
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
@@ -119,9 +120,13 @@ const styles = StyleSheet.create({
   },
   item: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  itemContent: {
+    flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    alignContent: 'space-around',
   },
   thumbnail: {
     width: 60,
@@ -131,6 +136,20 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    flexWrap: 'wrap',
+    marginRight: 5,
+    maxWidth: '68%',
+  },
+  itemLink: {
+    fontSize: 14,
+    textTransform: 'uppercase',
+    backgroundColor: 'rgba(81, 213, 185, 1)',
+    color: 'white',
+    borderColor: 'rgba(81, 213, 185, .7)',
+    padding: 6,
+    borderWidth: 1,
+    borderRadius: 2,
+    textShadowColor: 'rgba(0,0,0,.6)',
+    textShadowOffset: {width: -2, height: 1},
+    textShadowRadius: 10,
   }
 });
