@@ -42,20 +42,6 @@ border: none;
 height: 32px;
 width: 260px;
 }
-/*         .submit {
-background: linear-gradient(-180deg,#34d058,#28a745 60%);
-margin-left: 10px;
-border-radius: .25em;
-color: white;
-border: 1px solid #28a745;
-height: 32px;
-width: 80px;
-cursor: pointer;
-}
-.submit:hover {
-background: linear-gradient(-180deg,#34d058,#28a745 90%);
-border-color: rgba(27, 31, 35, 0.5);
-} */
 .title {
   text-transform: uppercase;
   padding-top: .5em;
@@ -105,6 +91,6 @@ padding: .1em .4em 0 .3em;
 img {
   border: 2px solid rgb(45, 98, 81);
   border-radius: 50%;
-  box-shadow: .1em .15em .2rem .1rem rgba(0, 0, 0, 0.5);
+  box-shadow: .1em .05em .25rem .09rem rgba(0, 0, 0, 0.4);
   height: 1.4em;
 }

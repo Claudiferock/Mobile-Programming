@@ -2,23 +2,14 @@ const SearchRepos = () => {
   const [query, setQuery] = React.useState('react');
   const [listItems, setListItems] = React.useState([]);
 
-  React.useEffect(() => {
-    fetchData();
-  }, [])
-
-  const fetchData = () => {
-    fetch('https://api.github.com/search/repositories?q=' + query)
-    .then(response => response.json()) 
-    .then(responseData => { 
-      setListItems(responseData.items)
+  const fetchData = React.useCallback(async () => {
+    const response = await fetch('https://api.github.com/search/repositories?q=' + query);
+    const responseData = await response.json();
+    (response.ok) ? setListItems(responseData.items) : console.error(`UPS! error fetching`)
     })
-    .catch(err => console.error(`UPS! `+err))
-  }
 
   const handleChange = async () => {
-    await setQuery(event.target.value);
-    /* fetchData(); */
-    /* console.log(`query: `+ query) */;
+    await (!event.target.value) ? setQuery('react') : setQuery(event.target.value);
     return console.log(`query: `+ query);
   }
   
@@ -29,6 +20,10 @@ const SearchRepos = () => {
         <td><a href={repo.owner.html_url}>{repo.owner.html_url}</a></td>
       </tr>
   )
+
+  React.useEffect(() => {
+    fetchData();
+  }, [query])
 
     return (
       <div className="container">
