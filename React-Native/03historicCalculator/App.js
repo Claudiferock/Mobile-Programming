@@ -26,7 +26,6 @@ export default function App() {
     if (result) {
       setHistory([...history, {key: `${inputNum1} ${operator} ${inputNum2} = ${result}`}]);
     }
-    console.log('result useeffect:', result);
   }, [result]);
 
   return (

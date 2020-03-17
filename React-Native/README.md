@@ -16,7 +16,7 @@ Simple shopping list, where you can add items to the list or clear the list.
 
 ## RN05: Calculator (Multipage)
 Multipage calculator with one page for "calculations" and the other page for "operations history".  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg" alt="Screenshot of React Native multipage calculator app" width="238"/></a>  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif" alt="Screenshot of React Native multipage calculator app" width="238"/></a>  
 
 
 ## RN06: Guessing Game with high score

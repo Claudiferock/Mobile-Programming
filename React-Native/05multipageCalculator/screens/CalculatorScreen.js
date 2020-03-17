@@ -1,27 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, TextInput, View, Button, StyleSheet } from "react-native";
 
 export default function CalculatorScreen(props) {
     navigationOptions = {title: 'Calculator',};
 
-    const [inputNum1, setInput1] = useState(0);
-    const [inputNum2, setInput2] = useState(0);
-    const [result, setResult] = useState(0);
+    const [inputNum1, setInput1] = useState('');
+    const [inputNum2, setInput2] = useState('');
+    const [operator, setOperator] = useState('');
+    const [result, setResult] = useState('');
     const [history, setHistory] = useState([]);
 
     const { navigate } = props.navigation;
   
-    const buttonPressed = (operator) => {
-      (operator == '+') ? ( setResult(parseInt(inputNum1) + parseInt(inputNum2)), calculation(operator) )
-      : (operator == '-') ? ( setResult(parseInt(inputNum1) - parseInt(inputNum2)), calculation(operator) )
-      : (operator == '*') ? ( setResult(parseInt(inputNum1) * parseInt(inputNum2)), calculation(operator) )
-      : (setResult((parseInt(inputNum1) / parseInt(inputNum2)).toFixed(2)), calculation(operator));
-      clearInput();
+    const buttonPressed = (operatorInput) => {
+      
+      (operatorInput == '+') ? setResult(parseInt(inputNum1) + parseInt(inputNum2))
+      : (operatorInput == '-') ? setResult(parseInt(inputNum1) - parseInt(inputNum2))
+      : (operatorInput == '*') ? setResult(parseInt(inputNum1) * parseInt(inputNum2))
+      : setResult(
+        Number.isInteger(parseInt(inputNum1) / parseInt(inputNum2)) 
+        ? parseInt(inputNum1) / parseInt(inputNum2)
+        : (parseInt(inputNum1) / parseInt(inputNum2)).toFixed(2)
+      );
+
+      setOperator(operatorInput);
     }
 
-    const calculation = (operator) => {
-      setHistory([...history, {key: `${inputNum1} ${operator} ${inputNum2} = ${result}`}]);
-    }
+    useEffect(() => {
+      if (result) {
+        setHistory([...history, {key: `${inputNum1} ${operator} ${inputNum2} = ${result}`}]);
+      }
+      console.log('result useeffect:', result);
+      clearInput();
+    }, [result]);
 
     const clearInput = () => {
       setInput1(0);
@@ -83,7 +94,7 @@ const styles = StyleSheet.create({
     },
     result: {
       color: 'white',
-      flex: 1,
+      flex: 2,
       textAlign: "center",
       textAlignVertical: "center",
       backgroundColor: 'rgba(255,255,0,.8)',
@@ -98,7 +109,7 @@ const styles = StyleSheet.create({
       borderBottomRightRadius: 35,
     },
     action: {
-      flex: 3,
+      flex: 2,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',

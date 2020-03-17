@@ -60,7 +60,7 @@ R08: Repositories list with Search
 
 
 [RN05](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/05multipageCalculator): Calculator (Multipage)  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.jpeg" alt="Screenshot of React Native multipage calculator app" width="160"/></a>   
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif" alt="Screenshot of React Native multipage calculator app" width="160"/></a>   
 
 
 [RN06](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/06highScoreGuessingGame): Guessing game with high score  

@@ -11,8 +11,9 @@ export default function HistoryScreen(props) {
     return (
         <View style={styles.container}>
           <View style={styles.history}>
-            <Text style={styles.historyText}>Calculations History</Text>
+            <Text style={styles.historyTitle}>Calculations History</Text>
             <FlatList
+              style={styles.historyList}
               data={ params.history }
               renderItem={ ({item}) => 
                 <Text style={styles.historyText}>{ item.key }</Text>}
@@ -26,20 +27,35 @@ HistoryScreen.navigationOptions = ({ navigate }) => ({ title: 'History'});
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1.2,
-      flexDirection: "column",
+      flex: 1,
+      flexDirection: "row",
       justifyContent: 'center',
-      alignItems: 'stretch',
-      backgroundColor: '#24292e',
+      backgroundColor: 'black',
       color: 'white',
     },
     history: {
-      flex: 1.4,
+      flex: 1,
+      alignContent: 'flex-end',
       alignItems: 'center',
+    },
+    historyTitle: {
+      flex:1,
+      color:'#47e3ff',
+      fontSize: 48,
+      alignSelf: 'center',
+      textTransform: 'uppercase',
+      transform: [ {rotate: '270deg' }],
+      position: 'absolute',
+      top: 90,
+      left: -140,
+    },
+    historyList: {
+      marginTop: 20,
     },
     historyText: {
       textAlign: "left",
-      color:'gainsboro',
-      fontSize: 24,
+      marginStart: 100,
+      color:'white',
+      fontSize: 34,
     }
   });

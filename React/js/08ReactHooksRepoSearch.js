@@ -8,8 +8,8 @@ const SearchRepos = () => {
     (response.ok) ? setListItems(responseData.items) : console.error(`UPS! error fetching`)
     })
 
-  const handleChange = async () => {
-    await (!event.target.value) ? setQuery('react') : setQuery(event.target.value);
+  const handleChange = () => {
+    (!event.target.value) ? setQuery('react') : setQuery(event.target.value);
     return console.log(`query: `+ query);
   }
   

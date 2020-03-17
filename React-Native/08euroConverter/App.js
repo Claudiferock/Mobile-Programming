@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
+    borderBottomStartRadius: 20,
+    borderBottomEndRadius: 20,
     width: '100%',
     backgroundColor: 'rgba(25, 22, 84,.8)',
   },
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 160,
     borderColor: 'rgba(25, 22, 84,.8)',
-    borderWidth: 1,
+    borderWidth: 10,
     borderRadius: 5,
   },
 });
