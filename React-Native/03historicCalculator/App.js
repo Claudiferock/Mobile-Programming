@@ -1,23 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput, View, Button, FlatList } from 'react-native';
 
 export default function App() {
 
   const [inputNum1, setInput1] = useState('');
   const [inputNum2, setInput2] = useState('');
-  const [result, setResult] = useState(0);
+  const [operator, setOperator] = useState('');
+  const [result, setResult] = useState('');
   const [history, setHistory] = useState([]);
 
-  const buttonPressed = (operator) => {
-    let operation = '';
-    (operator == '+') ? (setResult(parseInt(inputNum1) + parseInt(inputNum2)))
-    : (operator == '-') ? setResult(parseInt(inputNum1) - parseInt(inputNum2))
-    : (operator == '*') ? setResult(parseInt(inputNum1) * parseInt(inputNum2))
-    : setResult(parseInt(inputNum1) / parseInt(inputNum2));
+  const buttonPressed = (operatorInput) => {
+    (operatorInput == '+') ? setResult(parseInt(inputNum1) + parseInt(inputNum2))
+    : (operatorInput == '-') ? setResult(parseInt(inputNum1) - parseInt(inputNum2))
+    : (operatorInput == '*') ? setResult(parseInt(inputNum1) * parseInt(inputNum2))
+    : setResult(
+      Number.isInteger(parseInt(inputNum1) / parseInt(inputNum2)) 
+      ? parseInt(inputNum1) / parseInt(inputNum2)
+      : (parseInt(inputNum1) / parseInt(inputNum2)).toFixed(2)
+    );
 
-    operation = `${inputNum1} ${operator} ${inputNum2} = ${result}`;
-    setHistory([...history, {key: operation}]);
+    setOperator(operatorInput);
   }
+
+  useEffect(() => {
+    if (result) {
+      setHistory([...history, {key: `${inputNum1} ${operator} ${inputNum2} = ${result}`}]);
+    }
+    console.log('result useeffect:', result);
+  }, [result]);
 
   return (
     <View style={styles.container}>
@@ -48,8 +58,9 @@ export default function App() {
       </View>
 
       <View style={styles.history}>
-        <Text style={styles.historyText}> Calculations History</Text>
+        <Text style={styles.historyTitle}>Calculations</Text>
         <FlatList
+          style={styles.historyList}
           data={ history }
           renderItem={ ({item}) => 
             <Text style={styles.historyText}>{ item.key }</Text>}
@@ -65,7 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: '#24292e',
+    backgroundColor: 'rgb(0,0,0)',
     color: 'white',
   },
   result: {
@@ -84,7 +95,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 35,
   },
   action: {
-    flex: 2.4,
+    flex: 2,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -94,13 +105,13 @@ const styles = StyleSheet.create({
     fontSize: 84,
   },
   inputText: {
-    color: 'gainsboro',
+    color: 'tomato',
     fontSize: 72,
     width: 120,
     marginHorizontal: 10,
     marginVertical: 8,
     paddingRight: 8,
-    backgroundColor: '#202325',
+    backgroundColor: 'rgba(71,227,255,.1)',
     borderColor: 'coral',
     borderRadius: 5,
     borderWidth: 1,
@@ -114,12 +125,31 @@ const styles = StyleSheet.create({
     height: 100,
   },
   history: {
-    flex: 1.4,
+    flex: 2,
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    flexWrap: 'wrap',
+  },
+  historyTitle: {
+    flex:.6,
+    color:'#47e3ff',
+    fontSize: 20,
+    textTransform: 'uppercase',
+    transform: [ {rotate: '270deg' }],
+  },
+  historyList: {
+    flex:1,
+    backgroundColor:'rgba(71,227,255,.2)',
+    paddingStart: 5,
+    borderColor: 'white',
+    borderTopWidth: 1,
+    borderLeftWidth: 1,
+    borderRadius: 5,
   },
   historyText: {
-    textAlign: "left",
     color:'gainsboro',
-    fontSize: 24,
+    fontSize: 34,
   }
 });
