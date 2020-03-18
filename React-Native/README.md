@@ -29,9 +29,13 @@ Recipe Finder app using http://www.recipepuppy.com/api.
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg" alt="Screenshot of React Native recipe finder app" width="238"/></a>  
 
 ## RN08: Euro converter
+Currency converter app.  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN08.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN08.jpeg" alt="Screenshot of React Native recipe finder app" width="238"/></a>  
 
 
 ## RN09: Address finder
+Simple address finder app.  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN09.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN09.gif" alt="Screenshot of React Native recipe finder app" width="238"/></a> 
 
 
 ## RN10: Restaurant finder (Optional)

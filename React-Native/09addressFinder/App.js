@@ -1,50 +1,76 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect, useCallback }from 'react';
 import { StyleSheet, TextInput, View, Button } from 'react-native';
 import MapView, { Marker } from "react-native-maps";
 
 export default function App() {
   
   const [location, setLocation] = useState('Helsinki');
-  const [targerLatitude, setTargerLatitude] = useState(60.200692);
+  const [targetLatitude, setTargetLatitude] = useState(60.200692);
   const [targetLongitude, setTargetLongitude] = useState(24.934302);
-  const [targerLatitudeDelta, setTargerLatitudeDelta] = useState(0.0322);
-  const [targetLongitudeDelta, setTargetLongitudeDelta] = useState(0.0221);
-  
-/*   const fetchData = () {
+  const [data, setData] = useState([]);
+
+  const fetchData = useCallback(async () => {
     const url = `https://www.mapquestapi.com/geocoding/v1/address?key=v8sTEMrF49GGjyOhsK9riJyJIvhZnPqI&inFormat=kvp&outFormat=json&location=${location}&thumbMaps=false`;
-    fetch(url)
-    .then((response) => response.json())
-    .then((responseJson) => {
-      setTargerLatitude(responseJson.results[0].locations[0].latLng.lat);
-    })
-    .catch((error) => {
-      console.error('Failed to fetch', error);
-    });
-  } */
+    const response = await fetch(url);
+    const responseData = await response.json();
+    (response.ok) 
+      ? setData(responseData.results[0].locations[0])
+      : console.error('Failed to fetch');
+  })
+
+  const onRegionChange = () => {
+    return {
+      region: {
+        latitude: targetLatitude,
+        longitude: targetLongitude,
+      },
+    };
+  }
+
+  useEffect( () => {
+    fetchData();
+  }, [location]);
+  
+  const findLocation = () => {
+    setTargetLatitude(data.latLng.lat);
+    setTargetLongitude(data.latLng.lng);
+    onRegionChange();
+  }
   
   return (
     <View style={{ flex:1}}>
-      <MapView
-        style={{ flex:1 }}
-        initialRegion={{
-        latitude:targerLatitude,
-        longitude:targetLongitude,
-        latitudeDelta:targerLatitudeDelta,
-        longitudeDelta:targetLongitudeDelta,}}
-      >
-        <Marker
-        coordinate={{
-          latitude:targerLatitude,
-          longitude:targetLongitude}}
-        title='Haaga-Helia'/>
-      </MapView>
       <View style={styles.actionContainer}>
         <TextInput
           style={styles.inputText}
-          value={'Helsinki'}
+          value={ location }
+          onChangeText={(location) => setLocation(location)}
+          clearButtonMode='always'
         />
-        <Button color='rgb(0,190,90)' title="Search" />
+        <Button color='rgb(0,200,0)' title="Search" onPress={() => findLocation()} />
       </View>
+
+      <MapView
+        style={{ flex:1 }}
+        initialRegion={{
+          latitude:60.200692,
+          longitude:24.934302,
+          latitudeDelta:0.0322,
+          longitudeDelta:0.0221,}}
+        region={{
+          latitude: targetLatitude,
+          longitude: targetLongitude,
+          latitudeDelta:0.1,
+          longitudeDelta:0.2,
+        }}
+      >
+        <Marker
+          coordinate={{
+            latitude: targetLatitude,
+            longitude: targetLongitude,
+          }}
+          title={ location }
+        />
+      </MapView>
     </View>
   );
 }
@@ -61,8 +87,9 @@ const styles = StyleSheet.create({
     height: 100,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative'
+    alignItems: 'flex-end',
+    position: 'relative',
+    paddingBottom: 20,
   },
   inputContainer: {
     flexDirection: 'row',

@@ -1,6 +1,62 @@
 # Mobile Programming Challenges
 This repository is based on [Juha Hinkula](http://juhahinkula.github.io/juhahinkula.github.io/aboutme/)'s challenges for his Mobile Programming course at [Haaga-Helia](http://www.haaga-helia.fi/en/frontpage), which starts with React and moving fast into React Native.  
 
+
+## [React Native Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native)
+[RN01](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/01calculator): Calculator  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg" alt="Screenshot of React Native Calculator app" width="160"/></a>
+
+
+[RN02](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/02numberGuessingGame): Number guessing game  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg" alt="Screenshot of React Native guessing game app" width="160"/></a> <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg" alt="Screenshot of React Native guessing game app" width="160"/></a>
+
+
+[RN03](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/03historicCalculator): Calculator (with operations history)  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN03.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN03.jpeg" alt="Screenshot of React Native Calculator app with operations history" width="160"/></a>
+
+
+[RN04](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/04shoppingList): Shopping List  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg" alt="Screenshot of React Native shopping list app" width="160"/></a>
+
+
+[RN05](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/05multipageCalculator): Calculator (Multipage)  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif" alt="Screenshot of React Native multipage calculator app" width="160"/></a>   
+
+
+[RN06](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/06highScoreGuessingGame): Guessing game with high score  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg" alt="Screenshot of React Native guessing game app with high score" width="160"/></a>  
+
+
+[RN07](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/07recipeFinder): Recipe finder  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg" alt="Screenshot of React Native recipe finder app" width="160"/></a>  
+
+
+[RN08](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/08euroConverter): Euro converter  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN08.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN08.jpeg" alt="Screenshot of React Native currenccy (euro) converter app" width="160"/></a>  
+
+
+[RN09](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/09addressFinder): Address finder  
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN09.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN09.gif" alt="Screenshot of React Native address finder app" width="160"/></a>  
+
+
+RN10: Restaurant finder (Optional)
+
+
+RN11: Current map position marker 
+
+
+RN12: Shopping list with DB (SQLite)
+
+
+RNOPT: Shopping list with Firebase (real time DB)
+
+
+RN13: Shopping list with polished UI (React Native Element UI Toolkit)
+
+
+RN14: My places app
+
+
 ## [React Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React)
 R01: Hello World  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png" alt="Screenshot of simple 'hello world' react app" width="512"/></a>
@@ -41,55 +97,3 @@ R08: Repositories list with Search
 
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.gif" alt="Screenshot of Repositories List app with Search functionality" width="512"/></a>  
 
-
-## [React Native Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native)
-[RN01](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/01calculator): Calculator  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN01.jpeg" alt="Screenshot of React Native Calculator app" width="160"/></a>
-
-
-[RN02](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/02numberGuessingGame): Number guessing game  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(01).jpeg" alt="Screenshot of React Native guessing game app" width="160"/></a> <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN02(02).jpeg" alt="Screenshot of React Native guessing game app" width="160"/></a>
-
-
-[RN03](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/03historicCalculator): Calculator (with operations history)  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN03.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN03.jpeg" alt="Screenshot of React Native Calculator app with operations history" width="160"/></a>
-
-
-[RN04](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/04shoppingList): Shopping List  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN04.jpeg" alt="Screenshot of React Native shopping list app" width="160"/></a>
-
-
-[RN05](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/05multipageCalculator): Calculator (Multipage)  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN05.gif" alt="Screenshot of React Native multipage calculator app" width="160"/></a>   
-
-
-[RN06](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/06highScoreGuessingGame): Guessing game with high score  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN06.jpeg" alt="Screenshot of React Native guessing game app with high score" width="160"/></a>  
-
-
-[RN07](https://github.com/Claudiferock/Mobile-Programming/tree/master/React-Native/07recipeFinder): Recipe finder  
-<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN07.jpeg" alt="Screenshot of React Native recipe finder app" width="160"/></a>  
-
-
-RN08: Euro converter
-
-
-RN09: Address finder
-
-
-RN10: Restaurant finder (Optional)
-
-
-RN11: Current map position marker 
-
-
-RN12: Shopping list with DB (SQLite)
-
-
-RNOPT: Shopping list with Firebase (real time DB)
-
-
-RN13: Shopping list with polished UI (React Native Element UI Toolkit)
-
-
-RN14: My places app
