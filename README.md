@@ -58,42 +58,34 @@ RN14: My places app
 
 
 ## [React Exercises](https://github.com/Claudiferock/Mobile-Programming/tree/master/React)
-R01: Hello World  
+[R01](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/01helloReact.js): Hello World  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R01.png" alt="Screenshot of simple 'hello world' react app" width="512"/></a>
 
 
-R02: Click Counter  
+[R02](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/02ReactCounter.js): Click Counter  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R02.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R02.gif" alt="Screenshot of click counter app" width="512"/></a>
 
 
-R03: Click Counter with React Hooks  
+[R03](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/03ReactCounterHooks.js): Click Counter with React Hooks  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R03.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R03.gif" alt="Screenshot of click counter app using React Hooks" width="512"/></a>
 
 
-R04: Trivia  
+[R04](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/04ReactTrivia.js): Trivia  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R04.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R04.gif" alt="Screenshot of Trivia app" width="512"/></a>
 
 
-R05: Weather API
-
-
+[R05](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/05ReactWeatherAPI.js): Weather API  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R05.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R05.png" alt="Screenshot of eather API app" width="512"/></a>  
 
 
-R06: List
-
-
+[R06](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/06RestList.js): List  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R06.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R06.png" alt="Screenshot of React list app" width="512"/></a>  
 
 
-R07: Repositories list
-
-
+[R07](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/07RepoSimpleList.js): Repositories list  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R07.png"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R07.png" alt="Screenshot of Repositories list app" width="512"/></a>  
 
 
-R08: Repositories list with Search
-
-
+[R08](https://github.com/Claudiferock/Mobile-Programming/tree/master/React/js/08ReactHooksRepoSearch.js): Repositories list with Search  
 <a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/R08.gif" alt="Screenshot of Repositories List app with Search functionality" width="512"/></a>  
 
