@@ -24,14 +24,13 @@ export default function App() {
   const resetDB = () => {
     db.transaction(tx => {
       try {
-        tx.executeSql('drop table if exists shop_list;');
-        console.log('SUCCESS... Table dropped');
+        tx.executeSql(`delete * from shopping_list;`, []);
+        console.log('SUCCESS... Shopping list resetted');
       }
       catch {
         console.log('FAIL!');
       }
     });
-    createDB();
     updateList(); 
   }
 
