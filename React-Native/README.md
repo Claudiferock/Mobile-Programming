@@ -39,18 +39,24 @@ Simple address finder app.
 
 
 ## RN10: Restaurant finder (Optional)
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN10.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN10.gif" alt="Screenshot of React Native restaurant finder app" width="238"/></a>
 
 
-## RN11: Current map position marker 
+## RN11: Current position marker
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN11.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN11.gif" alt="Screenshot of React Native current position app" width="238"/></a>
 
 
 ## RN12: Shopping list with DB (SQLite)
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN12.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN12.gif" alt="Screenshot of React Native shopping list app with SQLite DB" width="238"/></a> 
 
 
 ## RNOPT: Shopping list with Firebase (real time DB)
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN12OPT.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN12OPT.gif" alt="Screenshot of React Native shopping list app with Firebase DB" width="238"/></a>
 
 
 ## RN13: Shopping list with polished UI (React Native Element UI Toolkit)
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN13.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN13.gif" alt="Screenshot of React Native shopping list app with Polished UI" width="238"/></a>
 
 
 ## RN14: My places app
+<a href="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN14.gif"><img src="https://raw.githubusercontent.com/Claudiferock/Mobile-Programming/master/img/RN14.gif" alt="Screenshot of React Native my places app" width="238"/></a>
