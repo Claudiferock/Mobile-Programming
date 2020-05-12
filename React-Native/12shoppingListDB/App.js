@@ -39,7 +39,8 @@ export default function App() {
     db.transaction(tx => {
         tx.executeSql('insert into shopping_list (amounts, title) values (?, ?);', [parseInt(amount), title]);    
       }, null, updateList
-    )
+    );
+    clearFields();
   }
 
   // Update shopping_listlist
@@ -58,6 +59,18 @@ export default function App() {
         tx.executeSql(`delete from shopping_list where id = ?;`, [id]);
       }, null, updateList
     )    
+  }
+
+  const clearFields = () => {
+    setTitle('');
+    setAmount('');
+  }
+
+  const evaluateAddition = () => {
+    if (title&&amount) {
+      saveItem();
+    }
+
   }
 
   const listSeparator = () => {
@@ -89,7 +102,7 @@ export default function App() {
             <Button onPress={resetDB} title="Reset" color="rgba(225, 40, 10, .9)" /> 
           </View>    */} 
           <View style={styles.add}>
-            <Button onPress={saveItem} title="Add" color="rgb(80,225,80)" /> 
+            <Button onPress={evaluateAddition} title="Add" color="rgb(80,225,80)" /> 
           </View>    
         </View>
       </View>
